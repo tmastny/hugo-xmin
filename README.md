@@ -21,7 +21,7 @@ ggplot2::diamonds
 ```
 </div>
 <div class="col-md-6"><h2>AWS Sagemaker</h2>
-```{python}
+```{r}
 mtcars
 ```
 </div>
