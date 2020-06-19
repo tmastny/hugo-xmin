@@ -1,5 +1,5 @@
 body {
-  max-width: 800px;
+  max-width: 650px;
   margin: auto;
   padding: 1em;
   line-height: 1.5em;
@@ -15,7 +15,10 @@ body {
   border-radius: 5px;
 }
 .menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+.title { 
+  font-size: 1.1em; 
+  line-height: 1.1em;
+}
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
@@ -26,6 +29,7 @@ hr {
 pre {
   border: 1px solid #ddd;
   box-shadow: 5px 5px 5px #eee;
+  background: #f8f8f8;
   padding: 1em;
   overflow-x: auto;
 }
