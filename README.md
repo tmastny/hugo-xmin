@@ -22,12 +22,7 @@ ggplot2::diamonds
 </div>
 <div class="col-md-6"><h2>AWS Sagemaker</h2>
 ```{python}
-import pandas as pd
-import numpy as np
-
-input_data = 's3://sagemaker-sample-data-us-east-2/processing/census/census-income.csv'
-df = pd.read_csv(input_data, nrows=1000)
-df.head()
+mtcars
 ```
 </div>
 </div>
