@@ -7,7 +7,7 @@
   {{ template "_internal/disqus.html" . }}
 {{ end }}
 
-<script src="/assets/js/rainbow.js"></script>
-<script src="/assets/js/language/generic.js"></script>
-<script src="/assets/js/language/python.js"></script>
-<script src="/assets/js/language/r.js"></script>
+<script src="{{ "/js/rainbow-custom.min.js" | relURL }}"></script>
+<script>
+Rainbow.color();
+</script>
