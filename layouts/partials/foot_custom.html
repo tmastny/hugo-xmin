@@ -7,7 +7,10 @@
   {{ template "_internal/disqus.html" . }}
 {{ end }}
 
-<script src="{{ "/js/rainbow-custom.min.js" | relURL }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/r.min.js"></script>
+
 <script>
-Rainbow.color();
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
 </script>
