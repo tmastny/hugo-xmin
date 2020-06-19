@@ -12,7 +12,7 @@ add any number of columns within the body of the post:
 
 ````
 <div class="row">
-<div class="col-md-6"><h2>R sagemaker</h2>
+<div class="col-md-6"><h2>Column 1</h2>
 `r ''````{r}
 #1234567890#1234567890#1234567890#1234567890#1234567890#1234567890#1234567890#12
 library(tidyverse)
@@ -20,7 +20,7 @@ library(tidyverse)
 ggplot2::diamonds
 ```
 </div>
-<div class="col-md-6"><h2>AWS Sagemaker</h2>
+<div class="col-md-6"><h2>Column 2</h2>
 ```{r}
 mtcars
 ```
