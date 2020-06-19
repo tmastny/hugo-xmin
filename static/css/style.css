@@ -30,6 +30,15 @@ hr {
 .pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
 
+
+/* misc elements */
+img, iframe, video { max-width: 100%; }
+main { hyphens: auto; }
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
 /* code */
 pre {
   border: 1px solid #ddd;
@@ -40,15 +49,6 @@ pre {
 }
 code { background: #f9f9f9; }
 pre code { background: none; }
-
-/* misc elements */
-img, iframe, video { max-width: 100%; }
-main { hyphens: auto; }
-blockquote {
-  background: #f9f9f9;
-  border-left: 5px solid #ccc;
-  padding: 3px 1em 3px;
-}
 
 table {
   margin: auto;
