@@ -4,7 +4,7 @@
   <hr/>
   {{ . | markdownify }}
   {{ end }}
-   {{ if .File.Path }}
+  {{ if .File.Path }}
     {{ $.Scratch.Set "FilePath" .File.Path }}
     {{ $RmdFile := (print .File.BaseFileName ".Rmd") }}
     {{ $Files := readDir (print "content/" .File.Dir) }}
