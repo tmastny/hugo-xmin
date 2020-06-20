@@ -2,9 +2,9 @@
 
 ## Fork
 
-This fork primarily adds the Bootstrap 
+This fork primarily adds the Bootstrap
 [Grid system](https://getbootstrap.com/docs/4.0/layout/grid/)
-for organizing blog posts into columns. 
+for organizing blog posts into columns.
 
 Following the directions from this Stackoverflow
 [answer](https://stackoverflow.com/a/38995154/6637133), you can easily
@@ -27,3 +27,20 @@ mtcars
 </div>
 </div>
 ````
+
+```r
+library(tidyverse)
+
+urchins <- read_csv("https://tidymodels.org/start/models/urchins.csv") %>%
+  setNames(c("food_regime", "initial_volume", "width")) %>%
+  mutate(food_regime = factor(food_regime, levels = c("Init", "Low", "High")))
+
+urchins %>%
+  group_by(food_regime) %>%
+  summarise(
+    across(everything(), mean), n = n()
+  )
+
+mean(urchins$width)
+ggplot2::cut_interval(urchins$initial_volume)
+```
