@@ -1,5 +1,9 @@
   <footer>
-  {{ partial "foot_custom.html" . }}
+
+  {{ if eq .Section "blog" }}
+    {{ partial "foot_js.html" . }}
+  {{ end }}
+
   {{ with .Site.Params.footer }}
   <hr/>
   {{ . | markdownify }}
