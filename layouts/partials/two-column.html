@@ -1,0 +1,51 @@
+
+{{ $n_pages := len . }}
+{{ $n_rows := div $n_pages 2 }}
+
+{{ $pages := . }}
+
+{{ range $row, $sequence :=  (seq (math.Ceil $n_rows)) }}
+
+	<div class="row">
+
+	{{ range $col, $seqence := seq 2 }}
+
+		{{ $page_index := add $col (mul $row 2) }}
+
+		{{ $page := index $pages $page_index }}
+
+		<div class="col-md-6">
+
+ 			<article>
+			<header>
+		    <h2><a href='{{ $page.Permalink }}'>{{ $page.Title }}</a> </h2>
+		  </header>
+
+		  <div
+				style="
+				border: 0px none;
+				overflow: hidden;
+				margin: 15px auto;
+				max-width: 575px;"
+		  >
+			<iframe
+			  scrolling="no"
+			  src='{{ $page.Permalink }}'
+			  style="border: 0px none;
+			  margin-left: 0px;
+			  height: 560px;
+			  margin-top: -185px;
+			  width: 650px;">
+			</iframe>
+			</div>
+			</article>
+
+
+		</div>
+
+	{{ end }}
+
+	</div>
+
+{{ end }}
+

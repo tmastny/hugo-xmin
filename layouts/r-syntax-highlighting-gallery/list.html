@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<h1>{{ .Title | markdownify }}</h1>
+{{ end }}
+
+{{ .Content }}
+
+
+{{ partial "two-column.html" .Pages }}
+
+{{ partial "footer.html" . }}

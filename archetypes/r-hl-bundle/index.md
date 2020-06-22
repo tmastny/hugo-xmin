@@ -24,3 +24,4 @@ ggplot2::cut_interval(urchins$initial_volume)
 
 lm(width ~ initial_volume * food_regime, data = urchins)
 ```
+<!--more-->
