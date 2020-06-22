@@ -7,6 +7,18 @@
 {{ .Content }}
 
 
-{{ partial "two-column.html" .Pages }}
+
+<h2>Text Editor</h2>
+{{ $hl_editor := (where .Pages "Params.tags" "intersect" (slice "editor")) }}
+{{ partial "two-column.html"  $hl_editor}}
+
+<h2>Server-side</h2>
+{{ $hl_server := (where .Pages "Params.tags" "intersect" (slice "server")) }}
+{{ partial "two-column.html"  $hl_server}}
+
+<h2>Client-side</h2>
+{{ $hl_client := (where .Pages "Params.tags" "intersect" (slice "client")) }}
+{{ partial "two-column.html"  $hl_client}}
+
 
 {{ partial "footer.html" . }}
