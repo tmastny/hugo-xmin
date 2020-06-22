@@ -1,5 +1,9 @@
-{{/* Default List */}}
-
+{{/* Home Page List */}}
+{{/* TODO ideas: */}}
+{{/*   - feature posts with summaries */}}
+{{/*   - list of recent posts */}}
+{{/*   - project lists and summaries */}}
+{{/*   inspo: two column summaries: https://www.joelonsoftware.com/ */}}
 
 
 {{ partial "header.html" . }}
@@ -8,6 +12,7 @@
 
 <ul>
   {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
   {{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
   {{ range $paginator.Pages }}
   <li>

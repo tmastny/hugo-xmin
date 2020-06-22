@@ -1,0 +1,18 @@
+{{/* Project List */}}
+
+
+
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<ul>
+  {{ range .Pages }}
+  	<article class="card">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h3>
+    {{ .Params.summary | markdownify }}
+  	</article>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}
