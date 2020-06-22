@@ -10,7 +10,13 @@
   {{ range .Pages }}
   	<article class="card">
     <h3><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h3>
-    {{ .Params.summary | markdownify }}
+
+    {{ with .Params.summary }}
+    	{{ . | markdownify }}
+    {{ else }}
+    	{{ .Summary }}
+    {{ end }}
+
   	</article>
   {{ end }}
 </ul>
