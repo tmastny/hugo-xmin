@@ -1,8 +1,8 @@
 {{/* parameter: .Pages (dict "pages" .Pages "partial" "p.html")  */}}
 {{/* ----------------------------------------------------------- */}}
 
-{{ $partial := index . "partial" }}
 {{ $pages := index . "pages" }}
+{{ $partial := index . "partial" }}
 
 {{ $n_pages := len $pages }}
 {{ $n_rows := div $n_pages 2.0 }}
