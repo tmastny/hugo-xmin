@@ -2,7 +2,6 @@
 {{/* TODO ideas: */}}
 {{/*   - feature posts with summaries */}}
 {{/*   - list of recent posts */}}
-{{/*   - project lists and summaries */}}
 {{/*   inspo: two column summaries: https://www.joelonsoftware.com/ */}}
 
 
@@ -10,14 +9,17 @@
 
 {{ .Content }}
 
+
+<h2>Projects</h2>
+
 {{ range (where .Pages "Section" "=" "projects") }}
 
-	{{ range .Pages }}
+	{{ $partial_dict := dict "pages" .Pages "partial" "project-card.html" }}
+	{{ partial "two-column.html" $partial_dict }}
 
-		{{ partial "project-card.html" . }}
-
-	{{ end }}
 {{ end }}
+
+<h2>Recent Posts</h2>
 
 <ul>
   {{ $pages := .Site.RegularPages }}
