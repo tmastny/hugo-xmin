@@ -8,8 +8,7 @@
 
 
 <section class="card article-list">
-  <div class="date-author">
-    {{ if .Params.author }}<span class="author">{{ partial "author_names.html" . }}</span> / {{ end }}
+  <div class="date">
     <span class="date">{{ .Date.Format "2006-01-02" }}</span>
   </div>
   <h3><a href="{{ .URL }}">{{ .Title }}</a></h3>

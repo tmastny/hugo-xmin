@@ -72,11 +72,8 @@ thead, tfoot, tr:nth-child(even) { background: #eee; }
     a {
       text-decoration: none;
       color: inherit;
+      &:hover, &:active {color: #0000EE;}
+
     }
   }
-}
-
-a {
-   color: #fc8002;
-   &:hover, &:visited, &:active { color: #fc8002; }
 }
