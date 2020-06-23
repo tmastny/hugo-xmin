@@ -10,9 +10,17 @@
 
 {{ .Content }}
 
+{{ range (where .Pages "Section" "=" "projects") }}
+
+	{{ range .Pages }}
+
+		{{ partial "project-card.html" . }}
+
+	{{ end }}
+{{ end }}
+
 <ul>
-  {{ $pages := .Pages }}
-  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ $pages := .Site.RegularPages }}
   {{ $paginator := .Paginate (where $pages "Section" "=" "blog") }}
   {{ range $paginator.Pages }}
   <li>

@@ -8,16 +8,7 @@
 
 <ul>
   {{ range .Pages }}
-  	<p><article class="card">
-    <h3><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h3>
-
-    {{ with .Params.summary }}
-    	{{ . | markdownify }}
-    {{ else }}
-    	{{ .Summary }}
-    {{ end }}
-
-  	</article></p>
+  	{{ partial "project-card.html" . }}
   {{ end }}
 </ul>
 
