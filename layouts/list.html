@@ -30,15 +30,15 @@
 
 </ul>
 
-
-<h2>Posts</h2>
+{{/* TODO: would be nice if this linged to blog section */}}
+<h3>Posts</h3>
 
 <ul>
   {{ $pages := .Site.RegularPages }}
   {{ $paginator := .Paginate (where $pages "Section" "=" "blog") }}
   {{ range $paginator.Pages }}
   <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+    <span class="date">{{ .Date.Format "2006-01-02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
   </li>
   {{ end }}
