@@ -10,7 +10,7 @@
 {{ .Content }}
 
 
-<h2>Projects</h2>
+<div class='article-meta home-page'><h2>Projects</h2></div>
 
 {{ range (where .Pages "Section" "=" "projects") }}
 
@@ -19,7 +19,9 @@
 
 {{ end }}
 
-<h2>Recent Posts</h2>
+<br></br>
+
+<div class='article-meta home-page'><h2>Recent Posts</h2></div>
 
 
 {{ $pages := (where .Site.RegularPages "Section" "=" "blog") }}

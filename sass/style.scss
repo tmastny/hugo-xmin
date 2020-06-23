@@ -8,15 +8,28 @@ body {
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
+
 .article-meta, .menu a {
   text-decoration: none;
   background: #eee;
   padding: 5px;
   border-radius: 5px;
+}
+.menu a {
   &:link, &:visited, &:hover, &:active {color: #0000EE;}
-
 }
 .menu, .article-meta, footer { text-align: center; }
+
+.home-page {
+  text-align: left;
+}
+
+.home-page {
+  h1, h2, h3, h4, h5, h6 {
+    margin-left: 1em;
+  }
+}
+
 .title {
   font-size: 1.1em;
   line-height: 1.1em;
