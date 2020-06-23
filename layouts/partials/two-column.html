@@ -1,10 +1,11 @@
-{{/* parameter: .Pages  */}}
+{{/* parameter: .Pages (dict "pages" .Pages "partial" "p.html")  */}}
+{{/* ----------------------------------------------------------- */}}
 
+{{ $partial := index . "partial" }}
+{{ $pages := index . "pages" }}
 
-{{ $n_pages := len . }}
+{{ $n_pages := len $pages }}
 {{ $n_rows := div $n_pages 2.0 }}
-
-{{ $pages := . }}
 
 {{ range $row, $sequence :=  (seq (math.Ceil $n_rows)) }}
 
@@ -14,40 +15,17 @@
 
 		{{ $page_index := add $col (mul $row 2) }}
 
-		{{ $page := index $pages $page_index }}
+		{{ with (index $pages $page_index) }}
 
-		<div class="col-md-6">
+		  <div class="col-md-6">
 
- 			<article>
-			<header>
-		    <h2><a href='{{ $page.Permalink }}'>{{ $page.Title }}</a> </h2>
-		  </header>
+		  	{{ partial $partial . }}
 
-		  <div
-				style="
-				border: 0px none;
-				overflow: hidden;
-				margin: 15px auto;
-				max-width: 575px;"
-		  >
-			<iframe
-			  scrolling="no"
-			  src='{{ $page.Permalink }}'
-			  style="border: 0px none;
-			  margin-left: 0px;
-			  height: 560px;
-			  margin-top: -185px;
-			  width: 650px;">
-			</iframe>
-			</div>
-			</article>
-
-
-		</div>
+		  </div>
+		{{ end }}
 
 	{{ end }}
 
 	</div>
 
 {{ end }}
-

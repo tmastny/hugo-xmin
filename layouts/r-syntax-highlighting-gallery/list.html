@@ -7,18 +7,16 @@
 {{ .Content }}
 
 
+{{ $pages := .Pages }}
+{{ $headers := (dict "editor" "Text Editor" "server" "Server-side" "client" "CLient-side" ) }}
 
-<h2>Text Editor</h2>
-{{ $hl_editor := (where .Pages "Params.tags" "intersect" (slice "editor")) }}
-{{ partial "two-column.html"  $hl_editor}}
+{{ range (slice "editor" "server" "client") }}
 
-<h2>Server-side</h2>
-{{ $hl_server := (where .Pages "Params.tags" "intersect" (slice "server")) }}
-{{ partial "two-column.html"  $hl_server}}
+	<h2>{{ index $headers . }}</h2>
+	{{ $highlights := (where $pages "Params.tags" "intersect" (slice .)) }}
+	{{ $partial_dict := (dict "pages" $highlights "partial" "r-gallery.html") }}
+	{{ partial "two-column.html" $partial_dict }}
 
-<h2>Client-side</h2>
-{{ $hl_client := (where .Pages "Params.tags" "intersect" (slice "client")) }}
-{{ partial "two-column.html"  $hl_client}}
-
+{{ end }}
 
 {{ partial "footer.html" . }}
