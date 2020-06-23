@@ -30,6 +30,8 @@
 {{ $partial_dict := (dict "pages" $paginator.Pages "partial" "blog-card.html") }}
 {{ partial "two-column.html" $partial_dict }}
 
+<br></br>
+
 {{ template "_internal/pagination.html" . }}
 
 {{ partial "footer.html" . }}

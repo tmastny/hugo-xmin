@@ -13,13 +13,23 @@ body {
   background: #eee;
   padding: 5px;
   border-radius: 5px;
+  &:link, &:visited, &:hover, &:active {color: #0000EE;}
+
 }
 .menu, .article-meta, footer { text-align: center; }
 .title {
   font-size: 1.1em;
   line-height: 1.1em;
 }
-footer a { text-decoration: none; }
+footer a {
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {color: #0000EE;}
+}
+.pagination a {
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {color: #0000EE;}
+}
+
 hr {
   border-style: dashed;
   color: #ddd;

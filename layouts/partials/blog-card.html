@@ -6,7 +6,7 @@
 {{/* Will need to add some CSS to clean up the "article-list" class */}}
 {{/*------------------*/}}
 
-
+<p>
 <section class="card article-list">
   <div class="date">
     <span class="date">{{ .Date.Format "2006-01-02" }}</span>
@@ -21,11 +21,15 @@
     <div class="thumbnail">{{ (print . " alt=\"Thumbnail\" />") | safeHTML }}</div>
     {{ end }}
     {{ end }}
+
+    <p>
     {{ with .Params.summary }}
       {{ $.Scratch.Set "summary" (markdownify .) }}
     {{ else }}
       {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
     {{ end }}
     {{ $.Scratch.Get "summary" }}
+  	</p>
   </div>
 </section>
+</p>
