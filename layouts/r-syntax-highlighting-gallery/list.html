@@ -14,7 +14,7 @@
 
 	<h2>{{ index $headers . }}</h2>
 	{{ $highlights := (where $pages "Params.tags" "intersect" (slice .)) }}
-	{{ $partial_dict := (dict "pages" $highlights "partial" "r-gallery.html") }}
+	{{ $partial_dict := (dict "pages" $highlights "partial" "rgallery-card.html") }}
 	{{ partial "two-column.html" $partial_dict }}
 
 {{ end }}
