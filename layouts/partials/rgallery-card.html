@@ -3,7 +3,7 @@
 
 <article class="card">
 <header>
-<h2><a href='{{ .Permalink }}'>{{ .Title }}</a></h2>
+<h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
 </header>
 
 <div
@@ -13,17 +13,15 @@
 	margin: 15px auto;
 	max-width: 575px;"
 >
-<a href='{{ .Permalink }}'>
 <iframe
 	scrolling="no"
-	src='{{ .Permalink }}'
+	src='{{ .RelPermalink }}'
 	style="border: 0px none;
 	margin-left: 0px;
 	height: 560px;
 	margin-top: -185px;
 	width: 650px;">
 </iframe>
-</a>
 </div>
 
 </article>
