@@ -7,6 +7,8 @@
   {{ template "_internal/disqus.html" . }}
 {{ end }}
 
+{{ if .Params.nohl }}
+{{ else }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/r.min.js"></script>
 
@@ -14,3 +16,4 @@
 hljs.configure({languages: []});
 hljs.initHighlightingOnLoad();
 </script>
+{{ end }}
