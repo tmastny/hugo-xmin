@@ -9,11 +9,28 @@
 
 {{ if .Params.nohl }}
 {{ else }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/r.min.js"></script>
 
 <script>
-hljs.configure({languages: []});
-hljs.initHighlightingOnLoad();
+var divs = document.querySelectorAll('pre');
+var languages = {'r': true, 'python': true, 'html': true, 'bash': true}
+
+for (var i = 0; i < divs.length; i++) {
+  var classes = divs[i].className.split(/\s+/);
+
+  for (var j = 0; j < classes.length; j++) {
+    if (languages[classes[j]]) {
+      divs[i].classList.add("language-" + classes[j]);
+    }
+  }
+}
 </script>
+
+<script src="{{ "/js/prism.js" | relURL }}"></script>
+
+<script>
+  Prism.languages.r = Prism.languages.extend('r', {
+    'keyword': /\b(?:if|else|repeat|while|function|for|in|next|break|NULL|NA|NA_integer_|NA_real_|NA_complex_|NA_character_|library)\b/
+  })
+</script>
+
 {{ end }}
