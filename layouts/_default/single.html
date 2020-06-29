@@ -10,10 +10,12 @@
 </main>
 
 {{ if .Section }}
+<br></br>
 <nav class="post-nav">
   <span class="nav-prev">{{ with .PrevInSection }}&larr; <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</span>
   <span class="nav-next">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> &rarr;{{ end }}</span>
 </nav>
+<br></br>
 {{ end }}
 
 {{ partial "footer.html" . }}
