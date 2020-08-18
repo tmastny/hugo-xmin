@@ -10,7 +10,7 @@
 
 {{ range (where .Pages "Section" "=" "projects") }}
 
-	{{ $partial_dict := dict "pages" .Pages "partial" "project-card.html" }}
+	{{ $partial_dict := dict "pages" (last 4 .Pages) "partial" "project-card.html" }}
 	{{ partial "two-column.html" $partial_dict }}
 
 {{ end }}
