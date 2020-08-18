@@ -15,6 +15,12 @@ body {
   padding: 5px;
   border-radius: 5px;
 }
+
+.article-meta a {
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {color: inherit; }
+}
+
 .menu a {
   &:link, &:visited, &:hover, &:active {color: #0000EE;}
 }

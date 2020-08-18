@@ -6,7 +6,7 @@
 {{ .Content }}
 
 
-<div class='article-meta home-page'><h2>Projects</h2></div>
+<div class='article-meta home-page'><a href="{{ (.Site.GetPage "section" "projects").RelPermalink }}"><h2 class="home-header">Projects</h2></a></div>
 
 {{ range (where .Pages "Section" "=" "projects") }}
 
@@ -17,7 +17,7 @@
 
 <br></br>
 
-<div class='article-meta home-page'><h2>Recent Posts</h2></div>
+<div class='article-meta home-page'><a href="{{ (.Site.GetPage "section" "blog").RelPermalink }}"><h2>Recent Posts</h2></a></div>
 
 
 {{ $pages := (where .Site.RegularPages "Section" "=" "blog") }}
