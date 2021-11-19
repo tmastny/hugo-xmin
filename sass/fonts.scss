@@ -23,21 +23,42 @@
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: italic;
-    font-weight: 400;
-    src: url('source-sans-pro-italic.woff2') format('woff2')
+    font-family: "Source Serif Pro";
+    font-weight: 600;
+    font-style: normal;
+    src: url('SourceSerifPro-BASIC-Semibold.ttf') format('truetype');
+    unicode-range: U+0020-007E, U+00A0-00FF, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2212;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
+    font-family: "Source Serif Pro";
+    font-weight: 600;
+    font-style: italic;
+    src: url('SourceSerifPro-BASIC-SemiboldItalic.ttf') format('truetype');
+    unicode-range: U+0020-007E, U+00A0-00FF, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2212;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Serif Pro";
     font-weight: 700;
-    src: url('source-sans-pro-700.woff2') format('woff2')
+    font-style: normal;
+    src: url('SourceSerifPro-BASIC-Bold.ttf') format('truetype');
+    unicode-range: U+0020-007E, U+00A0-00FF, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2212;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Source Serif Pro";
+    font-weight: 700;
+    font-style: italic;
+    src: url('SourceSerifPro-BASIC-BoldItalic.ttf') format('truetype');
+    unicode-range: U+0020-007E, U+00A0-00FF, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2212;
+    font-display: swap;
 }
 
 body {
-  font-family: "Source Serif Pro", Optima, 'Source Sans Pro', Segoe UI, Calibri, Arial, sans-serif;
+  font-family: "Source Serif Pro", Optima, Segoe UI, Calibri, Arial, sans-serif;
 }
 code {
 	font-family: Monaco, monospace;
