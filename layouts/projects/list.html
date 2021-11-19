@@ -8,7 +8,9 @@
 
 <ul>
   {{ range .Pages }}
-  	{{ partial "project-card.html" . }}
+  <li>
+      <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+  </li>
   {{ end }}
 </ul>
 
