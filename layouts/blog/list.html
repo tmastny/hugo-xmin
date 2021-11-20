@@ -12,14 +12,19 @@
 <div class="archive">
   {{ range .Pages.GroupByDate "2006" }}
   <h2 class="archive-title">{{ .Key }}</h2>
+
+  <ul style="list-style-type:none;">
   {{ range .Pages.GroupByDate "2006-01-02" }}
   {{ range .Pages }}
-  <p>
+  <li>
     <span>{{ .Date.Format "2006-01-02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </p>
+  </li>
   {{ end }}
   {{ end }}
+
+  </ul>
+
   {{ end }}
 </div>
 {{ end }}
