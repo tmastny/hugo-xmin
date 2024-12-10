@@ -6,12 +6,4 @@
 
 {{ .Content }}
 
-<ul>
-  {{ range .Pages }}
-  <li>
-      <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-  </li>
-  {{ end }}
-</ul>
-
 {{ partial "footer.html" . }}

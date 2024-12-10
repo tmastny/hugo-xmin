@@ -7,18 +7,6 @@
 
 {{/* 10 most recent blog posts */}}
 
-<h2>Projects</h2>
-
-<ul>
-  {{ range (where .Pages "Section" "=" "projects") }}
-    {{ range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-      </li>
-    {{ end }}
-  {{ end }}
-</ul>
-
 <h2>Latest Blog Posts</h2>
 
 <ul>
