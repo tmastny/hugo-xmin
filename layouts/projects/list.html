@@ -1,9 +1,25 @@
 {{/* Project List */}}
 
-
-
 {{ partial "header.html" . }}
 
+{{ if hasPrefix .File.Dir "projects/napkin-math/" }}
+  {{ if ne .File.Dir "projects/napkin-math/" }}
+    <p><a href="/projects/napkin-math/">← Back to Napkin Math</a></p>
+  {{ end }}
+{{ end }}
+
 {{ .Content }}
+
+{{ if eq .File.Dir "projects/napkin-math/" }}
+  {{ if .Pages }}
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}
 
 {{ partial "footer.html" . }}
