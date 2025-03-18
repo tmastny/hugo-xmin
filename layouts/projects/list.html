@@ -13,7 +13,7 @@
 {{ if eq .File.Dir "projects/napkin-math/" }}
   {{ if .Pages }}
   <ul>
-    {{ range .Pages }}
+    {{ range .Pages.ByDate }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>
